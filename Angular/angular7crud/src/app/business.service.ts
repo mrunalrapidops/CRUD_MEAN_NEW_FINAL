@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class BusinessService {
 
   uri = 'http://localhost:4000/business';
+
   constructor(private http: HttpClient) { }
 
   addBusiness(person_name, business_name, business_gst_number) {
@@ -22,9 +23,13 @@ export class BusinessService {
   getBusinesses() {
     return this.http.get(`${this.uri}`);
   }
+/*   editBusiness(id) {
+    console.log("id form service:--"+id);
+    return this.http.get(`${this.uri}/edit/${id}`);
+  } */
   editBusiness(id) {
     return this.http.get(`${this.uri}/edit/${id}`);
-  }
+    }
   updateBusiness(person_name, business_name, business_gst_number, id) {
 
       const obj = {

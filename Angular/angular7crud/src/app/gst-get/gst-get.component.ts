@@ -14,15 +14,14 @@ export class GstGetComponent implements OnInit {
   constructor(private bs: BusinessService) { }
 
   ngOnInit() {
-    this.bs
-      .getBusinesses().subscribe((data: Business[]) => {
+    this.bs.getBusinesses().subscribe((data: Business[]) => {
         this.businesses = data;
     });
   }
+  
   deleteBusiness(id) {
     this.bs.deleteBusiness(id).subscribe(res => {
       console.log('Deleted');
     });
   }
 }
-
